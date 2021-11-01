@@ -1,5 +1,6 @@
 const { Octokit } = require("octokit");
 const core = require("@actions/core");
+const dayjs = require("dayjs");
 const token = core.getInput("token");
 const octokit = new Octokit({
   auth: token,
@@ -7,6 +8,13 @@ const octokit = new Octokit({
 octokit.rest.issues.create({
   owner: "pengtaoa",
   repo: "create-issues-action",
-  title: "每日任务",
-  body: "今天学习javascript 原型链",
+  title: getTitle(),
+  body: getBody(),
 });
+
+function getTitle() {
+  return dayjs.format("YYYY-MM-DD");
+}
+function getBody() {
+  return "[如何写每日学习计划](https://github.com/cuixiaorui/study-every-day/blob/main/sed/daily-task.md)";
+}
