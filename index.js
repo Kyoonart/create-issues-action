@@ -1,6 +1,8 @@
 const { Octokit } = require("octokit");
+const core = require("@actions/core");
+const token = core.getInput("token");
 const octokit = new Octokit({
-  auth: `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`,
+  auth: token,
 });
 octokit.rest.issues.create({
   owner: "pengtaoa",
