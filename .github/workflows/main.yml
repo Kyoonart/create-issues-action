@@ -1,5 +1,7 @@
 on: [push]
-
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '1 16 * * *'
 jobs:
   create_issues_action:
     runs-on: ubuntu-latest
@@ -10,9 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: create issues action
-        uses: ./ # Uses an action in the root directory
+        uses:  pengtaoa/create-issues-action@main
         with:
           token: ${{secrets.TOKEN}}
        # Use the output from the `hello` step
       # - name: Get the output time
-      #  run: echo "The time was ${{ steps.hello.outputs.time }}" 
+      #  run: echo "The time was ${{ steps.hello.outputs.time }}"
