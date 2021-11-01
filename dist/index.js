@@ -19708,7 +19708,7 @@ octokit.rest.issues.create({
 });
 
 function getTitle() {
-  return dayjs.format("YYYY-MM-DD");
+  return dayjs().format("YYYY-MM-DD");
 }
 function getBody() {
   return "[如何写每日学习计划](https://github.com/cuixiaorui/study-every-day/blob/main/sed/daily-task.md)";
