@@ -2,5 +2,12 @@
   "name": "create-issues-action",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "dependencies": {
+    "@vercel/ncc": "^0.31.1",
+    "octokit": "^1.7.0"
+  }
 }
