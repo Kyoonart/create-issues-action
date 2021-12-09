@@ -1,7 +1,4 @@
-on: 
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '1 18 * * *'
+on: [push]
 jobs:
   create_issues_action:
     runs-on: ubuntu-latest
@@ -18,3 +15,9 @@ jobs:
        # Use the output from the `hello` step
       # - name: Get the output time
       #  run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+
+      
+      # schedule:
+    # * is a special character in YAML so you have to quote this string
+    # - cron:  '1 18 * * *'
